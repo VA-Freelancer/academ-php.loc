@@ -6,7 +6,7 @@ return [
         'name' => 'Иван Иванов',
         'post' => 'Frontend Developer',
         'email' => 'vproger@vk.com',
-        'phone' => '+79120100525',
+        'phone' => '+79120100500',
         'site' => 'https://vk.com/vproger',
     ],
     'education' =>[
