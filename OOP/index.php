@@ -1,6 +1,6 @@
 <?php
 
-class Article
+abstract class Article
 {
     protected $title;
     protected $titleFontSize;
@@ -44,6 +44,7 @@ class SportArticle extends Article
               </div>";
     }
 }
+
 class WeatherArticle extends Article
 {
     public function __construct(string $title,  string $articleBody,  string $border, string $bg, int $articleBodyFontSize=14, int $titleFontSize=20){
@@ -62,7 +63,7 @@ class WeatherArticle extends Article
     }
 }
 // полиморфизм
-class PoliticsArticle extends Article
+final class PoliticsArticle extends Article
 {
     protected $link;
     public function __construct(string $title,  string $articleBody,  string $border, string $bg,string $link, int $articleBodyFontSize=14, int $titleFontSize=20){
@@ -77,6 +78,7 @@ class PoliticsArticle extends Article
               </div>";
     }
 }
+
 $sportsNews = new SportArticle('Заголовок статьи про спорт', 'lorem lorem lorem', '2px solid red', '#eee', '1.jpg');
 
 $sportsNews->printArticle();
