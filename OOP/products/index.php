@@ -1,12 +1,15 @@
 <?php
-abstract class Products
+interface iImage{
+	public function getImage();
+}
+abstract class Products implements iImage
 {
-    protected string $title;
-    protected int $price;
-    protected int $weight;
-    protected string $weightType;
+    protected  $title;
+    protected  $price;
+    protected  $weight;
+    protected  $weightType;
 
-    public function __construct($title, $price, $weight, $weightType)
+    public function __construct(string $title,int $price,int $weight,string $weightType)
         {
             $this->title = $title;
             $this->price = $price;
@@ -44,14 +47,15 @@ abstract class Products
         abstract function showImage($image);
 
 }
-
-
-
 class Chocolate extends Products
 {
-    protected int $calories;
-    protected string $image;
-    public function __construct($title,  $price,  $weight, $weightType, $image, $calories = 0){
+    protected  $calories;
+    protected  $image;
+	public function getImage()
+	{
+
+	}
+    public function __construct($title,  $price,  $weight, $weightType,string $image, int $calories = 0){
         $this->calories=$calories;
         $this->image=$image;
         parent::__construct($title, $price, $weight, $weightType);
@@ -64,8 +68,12 @@ class Chocolate extends Products
 }
 class Candy extends Products
 {
-    protected string $image;
-    public function __construct($title,  $price,  $weight, $weightType, $image){
+    protected  $image;
+	public function getImage()
+	{
+
+	}
+    public function __construct($title,  $price,  $weight, $weightType,string $image){
         $this->image=$image;
         parent::__construct($title, $price, $weight, $weightType);
     }
@@ -80,5 +88,5 @@ $chocolateOne = new Chocolate('Шоколад', 150, 250, 'гр', 'chocolate.jpg
 $candyOne->printProduct();
 $chocolateOne->printProduct();
 $chocolateOne->showPriceNotTaxable();
-$chocolateTwo = new Chocolate('Шоколад с Арахисом', 500, 1000, 'гр', 'chocolateTwo.png');
+$chocolateTwo = new Chocolate('Шоколад с Арахисом', 500, 1000, 'гр', 'chocolate.jpg');
 $chocolateTwo->printProduct();
