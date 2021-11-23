@@ -11,11 +11,11 @@ interface iMagnifier{
 }
 abstract class Products implements iButton, iCounters, iMagnifier
 {
-    protected string $title;
-    protected int $price;
-    protected int $weight;
-    protected string $weightType;
-    public static string $companyName = 'Шоколадное подворье';
+    protected $title;
+    protected $price;
+    protected $weight;
+    protected $weightType;
+    public static $companyName = 'Шоколадное подворье';
 // константа
     const YEAR_START = 2019;
 //    статитический метод
@@ -26,7 +26,7 @@ abstract class Products implements iButton, iCounters, iMagnifier
     }
 
     //подсчитвает количество созданых классов общее
-    public static int $counter = 0;
+    public static $counter = 0;
 
 
     public function __construct(string $title,int $price,int $weight,string $weightType)
@@ -76,8 +76,8 @@ abstract class Products implements iButton, iCounters, iMagnifier
 }
 class Chocolate extends Products
 {
-    protected int $calories;
-    protected string $image;
+    protected $calories;
+    protected $image;
     public function __construct($title,  $price,  $weight, $weightType, string $image, int $calories = 0){
         $this->calories=$calories;
         $this->image=$image;
@@ -131,7 +131,7 @@ class Chocolate extends Products
 }
 class Candy extends Products
 {
-    protected string $image;
+    protected $image;
     public function __construct($title,  $price,  $weight, $weightType,string $image){
         $this->image=$image;
         parent::__construct($title, $price, $weight, $weightType);

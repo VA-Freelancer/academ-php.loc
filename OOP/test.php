@@ -24,7 +24,7 @@ $products = [
 ];
 // Далее нужно создать класс Product для обработки наших товаров, в классе должны быть методы 
 
-Product class {
+class Product  {
     // для начала работы с классами понять чем отличается private public static protected методы
 
     // в классе будут методы (пример):
@@ -41,7 +41,7 @@ Product class {
 $renderProduct = [];
 
 foreach($products as $product) {
-    $renderProduct[] = Product($product);
+    $renderProduct[] = new Product($product);
 }
 
 var_dump($renderProduct); // наш список товаров с обьектами.
