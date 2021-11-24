@@ -26,17 +26,22 @@ return [
     'language' =>[
         'Russian' => 'Native',
         'English' => 'Basic',
-        'Spanish' => 'Basic',
     ],
     'interests' => [
         'IT Knowledge', 'Web Design'
     ],
-    'aboutCareer' =>  'Summarise your career here lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can download this free resume/CV template here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.',
+    'aboutCareer' =>  'Summarise your career here lorem ipsum dolor sit amet, 
+    consectetuer adipiscing elit. You can download this free resume/CV template here. 
+    Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+     nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.',
     'careers' => [
         [
             'post' => 'Frontend Developer',
             'place' => 'Fred, Russia',
-            'duty' => 'Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.',
+            'duty' => 'Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo 
+            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
+            mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+            pede justo.',
             'yearStart' => 'Начало',
             'yearEnd' => 'Завершение'
         ],
@@ -76,7 +81,7 @@ return [
             [
                 'name' => 'Atom',
                 'about' => 'A comprehensive website template solution for startups/developers to market their mobile apps.',
-                'link' => 'hhttp://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/'
+                'link' => 'http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/'
             ],
             [
                 'name' => 'Delta',

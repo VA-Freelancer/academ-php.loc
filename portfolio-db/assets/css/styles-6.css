@@ -74,15 +74,23 @@ p {
   margin-bottom: 0;
 }
 .sidebar-wrapper .profile {
-  margin-bottom: 15px;
-  max-width: 100px;
-  max-height: 100px;
+
+
+
+}
+.sidebar-wrapper .profile-image{
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.sidebar-wrapper .profile img{
-  width: 100%;
+.sidebar-wrapper .profile-image img{
   height: 100%;
+  width: 100%;
+  display: block;
   object-fit: cover;
 }
 .sidebar-wrapper .contact-list .fa {

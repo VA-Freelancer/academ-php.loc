@@ -17,12 +17,13 @@ $aboutDate = $aboutDate->fetch();
 		$avatar = $aboutDate['avatar'];
 //    $about_data = $data['about'];
 		$educationData = $connection->query('SELECT * FROM education');
-		$langData =  $connection->query('SELECT * FROM languages');
-//    $intData = $data['interests'];
-//    $aboutCareer = $data['aboutCareer'];
-//    $careers = $data['careers'];
-//    $skills = $data['skills'];
-//    $introProjects = $data['projects']['intro'];
+		$langData =  $connection->query('SELECT * FROM language');
+        $intData = $connection->query('SELECT * FROM interests');
+        $careers = $connection->query('SELECT * FROM careers');
+        $aboutCareer = $connection->query('SELECT * FROM aboutcareer')->fetch();
+        $skills = $connection->query('SELECT * FROM skills');
+        $introProjects = $connection->query('SELECT * FROM intro')->fetch();
+        $projects = $connection->query('SELECT * FROM projectslist')->fetchAll();
 //    $projects = $data['projects'];
 ?>
 
@@ -59,7 +60,9 @@ $aboutDate = $aboutDate->fetch();
     <div class="wrapper">
         <div class="sidebar-wrapper">
             <div class="profile-container">
-                <img class="profile" src="<?=$avatar?>" alt="" />
+                <div class="profile-image">
+                    <img class="profile" src="<?=$avatar?>" alt="" />
+                </div>
                 <h1 class="name"><?=$aboutDate['name'];?></h1>
                 <h3 class="tagline"><?=$aboutDate['post'];?></h3>
             </div><!--//profile-container-->
@@ -95,7 +98,7 @@ $aboutDate = $aboutDate->fetch();
                 <h2 class="container-block-title">Интересы</h2>
                 <ul class="list-unstyled interests-list">
                     <?php foreach ($intData as $int){?>
-                        <li> <?= $int?></li>
+                        <li> <?= $int['interests']?></li>
                     <?php }?>
                 </ul>
             </div><!--//interests-->
@@ -107,7 +110,7 @@ $aboutDate = $aboutDate->fetch();
             <section class="section summary-section">
                 <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
                 <div class="summary">
-                    <p><?=$aboutCareer?></p>
+                    <p><?=$aboutCareer['text']?></p>
                 </div><!--//summary-->
             </section><!--//section-->
             
@@ -135,9 +138,9 @@ $aboutDate = $aboutDate->fetch();
             <section class="section projects-section">
                 <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
                 <div class="intro">
-                    <p><?=$introProjects;?></p>
+                    <p><?=$introProjects['text'];?></p>
                 </div><!--//intro-->
-                <?php foreach ($projects['projectsList'] as $project){?>
+                <?php foreach ($projects as $project){?>
                     <div class="item">
                         <span class="project-title"><a href="<?=$project['link'];?>"><?=$project['name'];?></a></span> - <span class="project-tagline">A responsive website template designed to help startups promote, market and sell their products.</span>
                     </div><!--//item-->

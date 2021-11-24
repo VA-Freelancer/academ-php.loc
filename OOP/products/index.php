@@ -1,3 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
 <?php
 
 interface iButton{
@@ -82,6 +93,11 @@ class Chocolate extends Products
         $this->calories=$calories;
         $this->image=$image;
         parent::__construct($title, $price, $weight, $weightType);
+    }
+
+    public function __set($name, $value)
+    {
+        echo "Вы не можете присвоить значение $value несуществующему свойству $name <br>";
     }
     public function printProduct()
     {
@@ -180,7 +196,13 @@ class Candy extends Products
     {
         return "<button class='magnifier'>+</button>";
     }
+    public function __get($name)
+    {
+        // TODO: Implement __get() method.
+        echo "Нельзя обратиться к свойству с именем $name <br>";
+    }
 }
+
 echo "<h1>Название компании: " . Candy::$companyName . "</h1>";
 echo "<p style='font: small-caps bold 24px/1 sans-serif;'>Основана в " . Candy::YEAR_START . "году.</p>";
 echo "<div style='display: flex; align-items: center;'>";
@@ -193,3 +215,9 @@ $chocolateTwo = new Chocolate('Шоколад с Арахисом', 500, 1000, '
 $chocolateTwo->printProduct();
 echo "</div>";
 echo "<div>Всего товаров:" . Candy::$counter . "</div>";
+
+?>
+
+</body>
+</html>
+
