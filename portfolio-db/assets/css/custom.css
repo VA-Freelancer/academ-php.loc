@@ -52,3 +52,18 @@
     --max-col-width: calc(var(--col-count) * (var(--col-width) + var(--gap-width)) - var(--gap-width));
     --side-offset: calc((100vw - var(--max-col-width)) / 2);
 }
+.row{
+    width: 100%;
+    margin: 0;
+}
+form{
+    margin: 0 0 20px;
+}
+.row.row-textarea{
+    margin: 0;
+}
+.row-textarea textarea{
+    width: 100%;
+    resize: vertical;
+    margin: 0;
+}
